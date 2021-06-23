@@ -81,7 +81,7 @@ const Table = (props) => {
                                                 
                                             <td><div className="td-content product-brand text-primary" style={{ fontWeight:"bold", fontSize:"15px" }}>#{ order.reference }</div></td>
                                             <td><div className="td-content" style={{ whiteSpace:"nowrap" }}>{ order.lines.length } Lines</div></td>
-                                            <td><div className="td-content"><span class="badge badge-success">Active</span></div></td>
+                                            <td><div className="td-content"><span className="badge badge-success">Active</span></div></td>
                                             <td><div className="td-content"><span className='badge badge-primary'>{ order.created_at }</span></div></td>
                                         </tr>
                                     ))
