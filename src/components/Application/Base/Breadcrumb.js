@@ -1,39 +1,18 @@
 import React from "react"
+import { useHistory } from 'react-router-dom'
 
 const Breadcrumb = (props) => {
+
+    const history = useHistory()
 
     return (
         <div className="page-header">
             <nav className="breadcrumb-one" aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="/">{props.first}</a></li>
-                    {
-                        props.third === undefined 
-                        ?
-                        <>
-                            <li className="breadcrumb-item active" aria-current="page">
-                                <a href="/app/dashboard">
-                                    {props.second}
-                                </a>
-                            </li>
-                        </>
-                        :
-                        <>
-                            <li className="breadcrumb-item">
-                                <a href="#">
-                                    {props.second}
-                                </a>
-                            </li>
-                            <li className="breadcrumb-item active" aria-current="page">
-                                <a href="#">
-                                    {props.third}
-                                </a>
-                            </li>
-                        </>
-                    }
-                    
-                    
-                </ol>
+                <button className="btn btn-dark btn-md" onClick={() => history.goBack()}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    &nbsp;
+                    Go back
+                </button>
             </nav>
         </div>
     )

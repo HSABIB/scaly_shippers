@@ -158,15 +158,13 @@ const Order = props => {
     })
 
     const DelieverOrder = () => {
-        (async function Grabbing() {
-            setLoading(true)
-            const FulfillOrderResponse = await OrdersService.fulfillOrder(orderID, "3000104")
-            if ( FulfillOrderResponse.response_code === 0 ){
-                history.goBack()
-            } else {
-
-            }
-        })();
+        setLoading(true)
+        const FulfillOrderResponse = OrdersService.fulfillOrder([orderID], "3000104")
+        if ( FulfillOrderResponse.response_code === 0 ){
+            history.goBack()
+        } else {
+            history.goBack()
+        }
     }
 
     return (
@@ -187,7 +185,7 @@ const Order = props => {
                                         <div className="col-xl-12 col-md-3 col-sm-6">
                                             <button className="btn btn-primary" onClick={handelPrint}>Print this out!</button>
                                         </div>
-                                        <div className="col-xl-12 col-md-3 col-sm-6">
+                                        <div className="col-xl-12 col-md-3 col-sm-6 mt-4">
                                             <button disabled={loading} className="btn btn-success" onClick={DelieverOrder}>Deliever&nbsp;Order</button>
                                         </div>
                                     </div>

@@ -7,7 +7,7 @@ const Orders = props => {
 
     return (
         <>
-            <Breadcrumb first="App" second="Orders" />
+            <Breadcrumb />
             <div className="row layout-top-spacing">
                 <Table />
             </div>

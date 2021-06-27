@@ -47,6 +47,12 @@ const Stores = props => {
                                 <div><center><Spinner style={{ width:"8rem", height:"8rem", color:"#4361ee" }} animation="border" role="status"><span className="sr-only">Loading...</span></Spinner></center></div>
                             :
                             <div className="row">
+                                <div className="card component-card_3" onClick={() => handelSelectStore('all-stores')}>
+                                    <div className="card-body">
+                                        <img src="https://res.cloudinary.com/dchmztvzz/image/upload/v1623810851/scaly/logos/fav-black_idwfgu.png" className="card-img-top" alt="..." />
+                                        <h5 className="card-user_name">All stores</h5>
+                                    </div>
+                                </div>
                                 {
                                     stores.map( (store, key) => (
                                         <div className="card component-card_3" onClick={() => handelSelectStore(store.reference)} key={store.reference} >
