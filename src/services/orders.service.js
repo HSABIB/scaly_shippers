@@ -25,9 +25,9 @@ const getOrder = (order) => {
         });
 }
 
-const fulfillOrder = (orders, fulfillement) => {
+const fulfillOrder = (orders, status) => {
     return axios
-        .post(FULFILL_ORDER_URL, {orders, fulfillement, Access}, { headers: authHeader() })
+        .post(FULFILL_ORDER_URL, {orders, status, Access}, { headers: authHeader() })
         .then((response) => {
             return response.data;
         });

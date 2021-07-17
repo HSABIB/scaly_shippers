@@ -153,13 +153,9 @@ const Order = props => {
 
     const [loading, setLoading] = useState(false)
 
-    const handelPrint = useReactToPrint({
-        content: () => printableRef.current,
-    })
-
-    const DelieverOrder = () => {
+    const FulfillOrder = (fulfullementStatus) => {
         setLoading(true)
-        const FulfillOrderResponse = OrdersService.fulfillOrder([orderID], "3000104")
+        const FulfillOrderResponse = OrdersService.fulfillOrder([orderID], fulfullementStatus)
         if ( FulfillOrderResponse.response_code === 0 ){
             history.goBack()
         } else {
@@ -182,11 +178,11 @@ const Order = props => {
                             <div className="invoice-actions-btn">
                                 <div className="invoice-action-btn">
                                     <div className="row">
-                                        <div className="col-xl-12 col-md-3 col-sm-6">
-                                            <button className="btn btn-primary" onClick={handelPrint}>Print this out!</button>
+                                        <div className="col-xl-12 col-md-3 col-sm-6 mt-4">
+                                            <button disabled={loading} className="btn btn-success" style={{ width: "100%" }} onClick={() => FulfillOrder('3000111')}>Deliever&nbsp;Order</button>
                                         </div>
                                         <div className="col-xl-12 col-md-3 col-sm-6 mt-4">
-                                            <button disabled={loading} className="btn btn-success" onClick={DelieverOrder}>Deliever&nbsp;Order</button>
+                                            <button disabled={loading} className="btn btn-warning" style={{ width: "100%" }} onClick={() => FulfillOrder('3000112')}>Return&nbsp;Order</button>
                                         </div>
                                     </div>
                                 </div>

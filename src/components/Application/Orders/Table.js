@@ -1,7 +1,7 @@
 /* eslint import/no-webpack-loader-syntax: off */
 
 import React, { useState, useEffect } from 'react'
-import { useHistory, useParams, Link } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { Helmet } from "react-helmet";
 import { Spinner } from 'react-bootstrap'
 
@@ -36,6 +36,7 @@ const Table = (props) => {
         setLoading(true)
         setOrders(null)
         const ordersResponse = await OrdersService.getOrders( storeID )
+        console.log( ordersResponse )
         if ( ordersResponse.response_code === 0 ){
             setOrders( ordersResponse.orders)
             setLoading(false)
@@ -71,7 +72,7 @@ const Table = (props) => {
                 <style rel="stylesheet" type="text/css">{ checkboxesStyle }</style>
             </Helmet>
             <div className="col-12 layout-spacing">
-                <div className="widget widget-table-two" style={{ position: "relative", position: "relative", padding: "20px", borderRadius: "6px", background: "#ffffff", border: "1px solid #e0e6ed", boxShadow: "0 0 40px 0 rgb(94 92 154 / 6%)" }}>
+                <div className="widget widget-table-two" style={{ position: "relative", padding: "20px", borderRadius: "6px", background: "#ffffff", border: "1px solid #e0e6ed", boxShadow: "0 0 40px 0 rgb(94 92 154 / 6%)" }}>
                     <div className="widget-heading" style={{ marginBottom: "15px" }}>
                         <h4 style={{ fontSize: "19px", marginBottom: "20px", letterSpacing: "0px", display: "block", color: "#0e1726", fontWeight: 600 }}>
                             Orders

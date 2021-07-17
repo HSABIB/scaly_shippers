@@ -108,7 +108,7 @@ const Signin = () => {
             </Form>
             <p className="terms-conditions">
                 © 2021 All Rights Reserved.<br />
-                Shifty Management is a product of <a rel="noreferrer" target="_blank" href="https://www.shiftysolutions.com">ShiftySolutions</a>. 
+                Shifty Management is a product of <a rel="noreferrer" target="_blank" rel="noreferrer" href="https://www.shiftysolutions.com">ShiftySolutions</a>. 
             </p>
         </div>
     )
