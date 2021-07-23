@@ -2,7 +2,6 @@
 const BASE_URL = "https://scaly-backend.herokuapp.com"
 // const BASE_URL = "http://localhost:8000"
 
-
 const usersAPI = 'users'
 const productsAPI = 'products'
 const ordersAPI = 'orders'
